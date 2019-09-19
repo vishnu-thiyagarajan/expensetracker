@@ -1,0 +1,11 @@
+/* Show it's not fixed to the top */
+body {
+  min-height: 50rem;
+}
+.bg-dark {
+    background-color: #0056b3 !important /*#343a40*/
+}
+.navbar-expand-md .navbar-toggler:hover {
+    background-color: #007bff;
+    border-color: #007bff
+}

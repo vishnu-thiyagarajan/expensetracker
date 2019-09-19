@@ -1,0 +1,46 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>{% block head_title %}Expense Tracker{% endblock %}</title>
+    {% include 'head_css.html' %}
+    <style type="text/css">
+      {% block style %}
+      {% endblock %}
+    </style>
+  </head>
+
+  <body>
+
+    {% include 'navbar.html' %}
+
+    {% if messages %}
+            <div class="alert alert-info alert-top-message">
+              <div class="container text-center">
+                {% for message in messages %}
+
+                 {% if "safe" in message.tags %} {{ message|safe }} {% else %} {{ message }} {% endif %}
+                 <br>
+                {% endfor %}
+              </div>
+            </div>
+    {% endif %}
+
+      {% block jumbotron %}
+      
+      {% endblock %}
+      
+      {% block content %}
+      {% endblock %}
+
+      
+    {% include 'javascript.html' %}
+  </body>
+</html>
+
