@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
+import django_heroku
 import os
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '_oqa439*66!@3%#+^f=&y(@rwoqex*!2z(q@l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['clientexpense.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['clientexpense.herokuapp.com', ]
 
 
 # Application definition
@@ -133,7 +133,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = '/static_in_pro/static_root/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(DATA_DIR, 'static_in_pro', 'static_root')
 # STATIC_ROOT = os.path.join(BASE_DIR, "static_in_pro", "static_root")
 
@@ -152,3 +152,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
 # SECURE_HSTS_SECONDS             = 1000000
 # SECURE_FRAME_DENY               = True
+django_heroku.settings(locals())

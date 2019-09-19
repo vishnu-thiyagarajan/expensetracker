@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 {% load crispy_forms_tags %}
-{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+{% block head_title %}{{ block.super }}{% endblock %}
 {% load static %}
 {% block content %}
   <div class='row'>
@@ -24,7 +24,7 @@
 	<div class="container">
 	<table class="table">
     <tr><th>NO.</th>
-        <th>Item Name</th>
+        <th>Client Name</th>
         <th>Active</th>
         <th>Added on</th></tr>
 	{% for item in queryset %}
