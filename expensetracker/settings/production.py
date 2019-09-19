@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_oqa439*66!@3%#+^f=&y(@rwoqex*!2z(q@l+k&8hv!+9t29='
+# SECRET_KEY = '_oqa439*66!@3%#+^f=&y(@rwoqex*!2z(q@l+k&8hv!+9t29='
+SECRET_KEY = os.environ.get('SECRET_KEY', '_oqa439*66!@3%#+^f=&y(@rwoqex*!2z(q@l+k&8hv!+9t29=') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['clientexpense.herokuapp.com', ]
 
 
 # Application definition
@@ -105,7 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
