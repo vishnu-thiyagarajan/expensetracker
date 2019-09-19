@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '_oqa439*66!@3%#+^f=&y(@rwoqex*!2z(q@l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['clientexpense.herokuapp.com', ]
+ALLOWED_HOSTS = ['clientexpense.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -130,9 +130,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_in_pro", "static_root")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_in_pro", "our_static"),
 ]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "static_in_pro", "media_root")
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
